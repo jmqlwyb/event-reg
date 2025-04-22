@@ -20,7 +20,7 @@ const EventList = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   
-  const [filter, setFilter] = useState("all"); // "all", "registered", "approved", "created"
+  const [filter, setFilter] = useState("all"); 
   
   const { data: events, isLoading, error } = useQuery({
     queryKey: ["events"],
@@ -92,7 +92,7 @@ const EventList = () => {
           {!isAdmin && (
             <Button 
               onClick={() => navigate('/events/record')}
-              className="bg-event-accent hover:bg-event-accent/90"
+              className="bg-gray-700 hover:bg-gray-800"
             >
               Create New Event
             </Button>
@@ -115,28 +115,28 @@ const EventList = () => {
               <Button 
                 variant={filter === "all" ? "default" : "outline"}
                 onClick={() => setFilter("all")}
-                className={filter === "all" ? "bg-event-accent" : ""}
+                className={filter === "all" ? "bg-gray-700" : ""}
               >
                 All Events
               </Button>
               <Button 
                 variant={filter === "registered" ? "default" : "outline"}
                 onClick={() => setFilter("registered")}
-                className={filter === "registered" ? "bg-event-accent" : ""}
+                className={filter === "registered" ? "bg-gray-700" : ""}
               >
                 My Registrations
               </Button>
               <Button 
                 variant={filter === "approved" ? "default" : "outline"}
                 onClick={() => setFilter("approved")}
-                className={filter === "approved" ? "bg-event-accent" : ""}
+                className={filter === "approved" ? "bg-gray-700" : ""}
               >
                 Approved
               </Button>
               <Button 
                 variant={filter === "created" ? "default" : "outline"}
                 onClick={() => setFilter("created")}
-                className={filter === "created" ? "bg-event-accent" : ""}
+                className={filter === "created" ? "bg-gray-700" : ""}
               >
                 My Events
               </Button>
@@ -152,7 +152,7 @@ const EventList = () => {
         
         {isLoading ? (
           <div className="flex flex-col items-center justify-center h-64">
-            <div className="w-12 h-12 border-t-2 border-event-accent rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-t-2 border-gray-700 rounded-full animate-spin"></div>
             <p className="mt-4 text-gray-400">Loading events...</p>
           </div>
         ) : error ? (
@@ -167,7 +167,7 @@ const EventList = () => {
                 setSearchTerm("");
                 if (!isAdmin) setFilter("all");
               }}
-              className="text-event-accent hover:underline"
+              className="text-gray-700 hover:underline"
             >
               Clear filters
             </button>
