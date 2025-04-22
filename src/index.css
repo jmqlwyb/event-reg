@@ -1,0 +1,104 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 14% 30%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 0%; /* black border */
+    --input: 217 33% 25%;
+    --ring: 222 84% 4%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 17% 20%;
+    --sidebar-foreground: 220 17% 90%;
+    --sidebar-primary: 220 14% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 17% 30%;
+    --sidebar-accent-foreground: 220 17% 90%;
+    --sidebar-border: 220 17% 25%;
+    --sidebar-ring: 220 14% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .event-header {
+    @apply bg-gray-900 text-white p-3 flex justify-between items-center border-b border-black shadow-md shadow-black;
+  }
+  
+  .event-card {
+    @apply bg-gray-800 text-white p-8 rounded-lg shadow-md mx-auto my-10 max-w-4xl border border-black shadow-black;
+    min-width: 320px;
+  }
+  
+  .input-field {
+    @apply w-full bg-gray-800 border-b border-black py-2 focus:outline-none focus:border-gray-500 transition-all duration-300 text-white;
+  }
+  
+  .input-label {
+    @apply block text-left mb-1 text-white;
+  }
+  
+  .primary-button {
+    @apply bg-gray-700 text-white py-2 px-6 rounded-md hover:bg-gray-600 transition-all duration-300 ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 5px black;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 hover:text-gray-400 transition-colors duration-300 text-white;
+  }
+  
+  .nav-link-active {
+    @apply border-b-2 border-black;
+  }
+  
+  .form-error {
+    @apply text-red-500 text-xs text-left mt-1;
+  }
+  
+  /* Responsive fixes for admin panel */
+  @media (max-width: 768px) {
+    .event-card {
+      max-width: 100%;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  }
+}
