@@ -250,9 +250,7 @@ const EventEdit = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Image URL (Optional)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="https://example.com/image.jpg" {...field} />
-                    </FormControl>
+                 
                     <FormMessage />
                   </FormItem>
                 )}
